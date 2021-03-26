@@ -10,7 +10,6 @@ const AppProvider = ({ children }) => {
 
   return (
     <Provider value={{ query, setQuery, isError, isLoading, movies }}>
-      {" "}
       {/* accessing the value globally */}
       {children}
     </Provider>
