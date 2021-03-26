@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-View my deployed app at :- https://happy-hawking-595c22.netlify.app/
+View my deployed app at :- https://blissful-roentgen-bb2f92.netlify.app/
 
 ## Available Scripts
 
