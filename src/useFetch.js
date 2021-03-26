@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 // GENERATE API_ACCESS_KEY AND PASTE IT BELOW
 const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_MOVIE_API_KEY}`;
 const useFetch = (params) => {
