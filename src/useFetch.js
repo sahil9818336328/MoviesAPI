@@ -1,33 +1,33 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 // GENERATE API_ACCESS_KEY AND PASTE IT BELOW
-const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_MOVIE_API_KEY}`;
+const API_ENDPOINT = `https://www.omdbapi.com/?apikey=41de0664`
 const useFetch = (params) => {
   // STATE VARIABLES
-  const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
-  const [movies, setMovies] = useState(null);
+  const [isLoading, setIsLoading] = useState(true)
+  const [isError, setIsError] = useState(false)
+  const [movies, setMovies] = useState(null)
 
   const fetchMovies = async (url) => {
     // passing argument in context.js
-    setIsLoading(true);
+    setIsLoading(true)
     try {
-      const response = await fetch(url);
-      const finalResponse = await response.json();
+      const response = await fetch(url)
+      const finalResponse = await response.json()
       //   console.log(finalResponse);
-      if (finalResponse.Response === "True") {
-        setMovies(finalResponse.Search || finalResponse); // finalResponse.Search === list of movies and finalResponse === single movie info.
+      if (finalResponse.Response === 'True') {
+        setMovies(finalResponse.Search || finalResponse) // finalResponse.Search === list of movies and finalResponse === single movie info.
       }
     } catch (error) {
-      setIsError(true);
+      setIsError(true)
     }
-    setIsLoading(false);
-  };
+    setIsLoading(false)
+  }
 
   useEffect(() => {
-    fetchMovies(`${API_ENDPOINT}${params}`); // url to fetching.
-  }, [params]); //runs on every key stroke
+    fetchMovies(`${API_ENDPOINT}${params}`) // url to fetching.
+  }, [params]) //runs on every key stroke
 
-  return { isLoading, isError, movies }; // returning state variables
-};
+  return { isLoading, isError, movies } // returning state variables
+}
 
-export default useFetch;
+export default useFetch
